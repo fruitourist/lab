@@ -18,7 +18,7 @@ bool isPrime(int n) {
 /*decision vector*/
 
 int enum(int n) {
-  /*decision processing*/
+  	/*decision processing*/
 
 	if (!isPrime(n))
 		/*enum(min b from a * b: 1 < a <= b, s++)*/
@@ -28,7 +28,7 @@ int enum(int n) {
 
 //test
 int main() {
-  cout << enum(4) << '\n' << enum(7);
+	cout << enum(4) << '\n' << enum(7);
 }
 
 /*int main() {
@@ -36,7 +36,7 @@ int main() {
 	cin >> q;
 
 	int n;
-  vector<int> a; //answer vector
+  	vector<int> a; //answer vector
 	for (int i = 0; i < q; i++) {
 		cin >> n;
 		a[i] = enum(n);
