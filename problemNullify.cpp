@@ -21,9 +21,9 @@ int enum(int n) {
   	/*decision processing*/
 
 	if (!isPrime(n))
-		/*enum(min b from a * b: 1 < a <= b, s++)*/
+		/*enum(min b from a * b: 1 < a <= b)*/
 	else
-		enum(n - 1, s++);
+		enum(n - 1);
 }
 
 //test
