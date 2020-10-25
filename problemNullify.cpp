@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
+#include <map>
 
 using namespace std;
 
@@ -15,7 +17,6 @@ bool isPrime(int n) {
 }
 
 int special(int n) {
-
 	if (sqrt(n) == (int)sqrt(n))
 		return sqrt(n);
 
@@ -28,23 +29,36 @@ int special(int n) {
 				return p;
 }
 
-/*decision vector*/
+map<int, int> decision;
 
 int enumeration(int n) {
-  	
-        /*decision processing*/
-        
-        int s = 0;
-        while (n != 0) {
-	    if (!isPrime(n) && n != 1)
-		    n = special(n); //min b from n = a * b: 1 < a <= b
-            else
-		    n--;
-            
-            s++;
-        }
-	
-	return s;
+	int on = n;
+
+	vector<int> trajectory;
+
+	while (n != 0) {
+
+		if (decision[n]) {
+			int spell = decision[n];
+			for (int i = 0; i < (int)trajectory.size(); i++)
+				decision[trajectory[i]] += spell;
+
+			return decision[on];
+		}
+		else
+			trajectory.push_back(n);
+
+		if (!isPrime(n) && n != 1)
+			n = special(n); //min b from n = a * b: 1 < a <= b
+		else
+			n--;
+
+		//spelling
+		for (int i = 0; i < (int)trajectory.size(); i++)
+			decision[trajectory[i]]++;
+	}
+
+	return decision[on];
 }
 
 int main() {
@@ -52,7 +66,7 @@ int main() {
 	cin >> q;
 
 	int n;
-  	vector<int> answer;
+	vector<int> answer;
 	for (int i = 0; i < q; i++) {
 		cin >> n;
 		answer.push_back(enumeration(n));
