@@ -21,7 +21,7 @@ int enum(int n) {
         /*decision processing*/
         
         int s = 0;
-        while (n != 0)
+        while (n != 0) {
 
 	    if (!isPrime(n))
 		    n = /*min b from n = a * b: 1 < a <= b)*/
@@ -29,6 +29,7 @@ int enum(int n) {
 		    n--;
             
             s++;
+        }
 }
 
 int main() {
