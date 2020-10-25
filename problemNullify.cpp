@@ -24,9 +24,9 @@ int enum(int n) {
         while (n != 0)
 
 	    if (!isPrime(n))
-		    vn = /*min b from n = a * b: 1 < a <= b)*/
+		    n = /*min b from n = a * b: 1 < a <= b)*/
             else
-		    vn--;
+		    n--;
             
             s++;
 }
