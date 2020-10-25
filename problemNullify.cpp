@@ -1,5 +1,5 @@
 #include <iostream>
-/*#include <vector>*/
+#include <vector>
 
 using namespace std;
 
@@ -48,10 +48,6 @@ int enum(int n) {
 }
 
 int main() {
-	cout << enum(4) << '\n' << enum(7);
-}
-
-/*int main() {
 	int q;
 	cin >> q;
 
@@ -59,9 +55,9 @@ int main() {
   	vector<int> answer;
 	for (int i = 0; i < q; i++) {
 		cin >> n;
-		a[i] = enum(n);
+		answer.push_back(enumeration(n));
 	}
 
 	for (int i = 0; i < q; i++)
-		cout << a[i] << '\n';
-}*/
+		cout << aswer[i] << '\n';
+}
