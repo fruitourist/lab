@@ -30,7 +30,7 @@ int special(int n) {
 
 /*decision vector*/
 
-int enum(int n) {
+int enumeration(int n) {
   	
         /*decision processing*/
         
@@ -59,5 +59,5 @@ int main() {
 	}
 
 	for (int i = 0; i < q; i++)
-		cout << aswer[i] << '\n';
+		cout << answer[i] << '\n';
 }
