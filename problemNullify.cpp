@@ -36,8 +36,7 @@ int enum(int n) {
         
         int s = 0;
         while (n != 0) {
-
-	    if (!isPrime(n))
+	    if (!isPrime(n) && n != 1)
 		    n = special(n); //min b from n = a * b: 1 < a <= b
             else
 		    n--;
